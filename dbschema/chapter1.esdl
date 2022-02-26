@@ -5,8 +5,8 @@ module default {
 
     type Travel {
         required link from -> Location {
-            # if target of link is deleted: ""
-
+            # if target of link (here: Location) is deleted: "on target delete"
+            # delete source of link (here Travel): "delete source"
             on target delete delete source
         };
         required link to -> Location {
