@@ -26,6 +26,7 @@ module default {
     }
 
     type Person {
-        required property name -> str
+        required property name -> str;
+        link travels := .<person[IS Travel]
     }
 }
