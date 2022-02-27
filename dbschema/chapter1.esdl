@@ -25,8 +25,15 @@ module default {
         };
     }
 
+    #type Person {
+    #    required property name -> str;
+    #    link travels := .<person[IS Travel]
+    #}
+
     type Person {
         required property name -> str;
-        link travels := .<person[IS Travel]
+        property travel_count := count(
+            (Select Travel filter .person = Person)
+        );
     }
 }
