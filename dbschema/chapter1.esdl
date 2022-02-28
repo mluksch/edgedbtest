@@ -36,4 +36,10 @@ module default {
             (Select Travel filter .person = Person)
         );
     }
+
+    type Animal { 
+        link owner -> Person;
+        property food -> array<str>;
+        multi property drinks -> str;
+    }
 }
